@@ -1,27 +1,27 @@
 ExternalProject_Add(ffmpeg
     DEPENDS
-        amf-headers
+        # amf-headers
         nvcodec-headers
         bzip2
-        game-music-emu
+        # game-music-emu
         gmp
         lame
-        libressl
-        libass
-        libbluray
-        libmodplug
+        # libressl
+        # libass
+        # libbluray
+        # libmodplug
         libpng
         libsoxr
-        libvpx
-        libzimg
-        libmysofa
-        opus
-        speex
+        # libvpx
+        # libzimg
+        # libmysofa
+        # opus
+        # speex
         vorbis
-        x264
+        # x264
         xvidcore
         libxml2
-        libmfx
+        # libmfx
         aom
         dav1d
     GIT_REPOSITORY https://github.com/FFmpeg/FFmpeg.git
@@ -36,40 +36,42 @@ ExternalProject_Add(ffmpeg
         --pkg-config-flags=--static
         --enable-cross-compile
         --enable-runtime-cpudetect
+        --enable-small
         --enable-gpl
         --enable-version3
-        --enable-nonfree
+        # --enable-nonfree
         --enable-avresample
         --enable-postproc
         --enable-avisynth
         --enable-gmp
-        --enable-libass
-        --enable-libbluray
+        --disable-doc
+        --disable-libfribidi
+        --disable-libass
+        --disable-libbluray
         --enable-libfreetype
-        --enable-libfribidi
-        --enable-libgme
-        --enable-libmodplug
+        --disable-libgme
+        --disable-libmodplug
         --enable-libmp3lame
-        --enable-libopus
+        --disable-libopus
         --enable-libsoxr
-        --enable-libspeex
-        --enable-libvorbis
-        --enable-libvpx
-        --enable-libx264
+        --disable-libspeex
+        --disable-libvorbis
+        --disable-libvpx
+        --disable-libx264
         --enable-libaom
-        --enable-libdav1d
-        --enable-libxvid
-        --enable-libzimg
-        --enable-libtls
+        --enable-libdav1d #no-macos
+        --disable-libxvid
+        --disable-libzimg
+        --disable-libtls
         --enable-libxml2
-        --enable-libmysofa
-        --enable-cuda
-        --enable-cuvid
-        --enable-nvdec
-        --enable-nvenc
-        --enable-libmfx
-        --enable-amf
-        --disable-decoder=libaom_av1
+        --disable-libmysofa
+        --enable-cuda #no-macos
+        --enable-cuvid #no-macos
+        --enable-nvdec #no-macos
+        --enable-nvenc #no-macos
+        --disable-libmfx
+        --disable-amf
+        --disable-decoder=libaom_av1 #no-macos
         --disable-w32threads
         "--extra-cflags=-DMODPLUG_STATIC"
     BUILD_COMMAND ${MAKE}

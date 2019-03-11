@@ -2,47 +2,53 @@ ExternalProject_Add(mpv
     DEPENDS
         angle-headers
         ffmpeg
-        fribidi
-        lcms2
-        libarchive
-        libass
-        libdvdnav
-        libdvdread
+        # fribidi
+        # lcms2
+        # libarchive
+        # libass
+        # libdvdnav
+        # libdvdread
         libiconv
         libjpeg
         libpng
         luajit
         rubberband
-        uchardet
-        openal-soft
+        # uchardet
+        # openal-soft
         mujs
-        vulkan
-        shaderc
-        crossc
-        vapoursynth
-    GIT_REPOSITORY https://github.com/mpv-player/mpv.git
+        # vulkan
+        # shaderc
+        # crossc
+        # vapoursynth
+    GIT_REPOSITORY https://github.com/zdol/mpv.git
+    GIT_TAG release/0.29
     UPDATE_COMMAND ""
     CONFIGURE_COMMAND ${EXEC}
         PKG_CONFIG=pkg-config
         TARGET=${TARGET_ARCH}
         DEST_OS=win32
         <SOURCE_DIR>/waf configure
-        --enable-static-build
-        --enable-pdf-build
+        --enable-static-build 
+        --disable-debug-build
+        --disable-pdf-build
         --disable-manpage-build
         --enable-libmpv-shared
         --enable-lua
         --enable-javascript
-        --enable-libarchive
-        --enable-libass
-        --enable-libbluray
-        --enable-dvdread
-        --enable-dvdnav
-        --enable-uchardet
         --enable-rubberband
-        --enable-lcms2
-        --enable-openal
-        --enable-vapoursynth
+        --disable-libarchive
+        --disable-libass
+        --disable-libass-osd
+        --disable-libbluray
+        --disable-dvdread
+        --disable-dvdnav
+        --disable-uchardet
+        --disable-lcms2
+        --disable-openal
+        --disable-vapoursynth
+        --disable-vulkan
+        --disable-shaderc
+        --disable-crossc
         --prefix=${MINGW_INSTALL_PREFIX}
     BUILD_COMMAND ${EXEC} <SOURCE_DIR>/waf
     INSTALL_COMMAND ""
@@ -72,7 +78,6 @@ ExternalProject_Add_Step(mpv copy-binary
     DEPENDEES strip-binary
     COMMAND ${CMAKE_COMMAND} -E copy <SOURCE_DIR>/build/mpv.exe ${CMAKE_CURRENT_BINARY_DIR}/mpv-package/mpv.exe
     COMMAND ${CMAKE_COMMAND} -E copy <SOURCE_DIR>/build/mpv.com ${CMAKE_CURRENT_BINARY_DIR}/mpv-package/mpv.com
-    COMMAND ${CMAKE_COMMAND} -E copy <SOURCE_DIR>/build/DOCS/man/mpv.pdf ${CMAKE_CURRENT_BINARY_DIR}/mpv-package/doc/manual.pdf
 
     COMMAND ${CMAKE_COMMAND} -E copy <SOURCE_DIR>/build/mpv.debug ${CMAKE_CURRENT_BINARY_DIR}/mpv-debug/mpv.debug
 
