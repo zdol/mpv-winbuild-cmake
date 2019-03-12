@@ -40,9 +40,9 @@ ExternalProject_Add(ffmpeg
         --enable-gpl
         --enable-version3
         # --enable-nonfree
-        --enable-avresample
-        --enable-postproc
-        --enable-avisynth
+        --disable-avresample
+        --disable-postproc
+        --disable-avisynth
         --disable-gmp
         --disable-doc
         --disable-libfribidi
@@ -63,7 +63,7 @@ ExternalProject_Add(ffmpeg
         --disable-libxvid
         --disable-libzimg
         --disable-libtls
-        --enable-libxml2
+        --disable-libxml2
         --disable-libmysofa
         --enable-cuda #no-macos
         --enable-cuvid #no-macos
