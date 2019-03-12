@@ -133,7 +133,7 @@ list(APPEND ep
     # speex
     # libmodplug
     # libvpx
-    # xvidcore
+    xvidcore
     # game-music-emu
     libpng
     # x264
