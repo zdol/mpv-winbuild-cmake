@@ -117,69 +117,69 @@ function(force_meson_configure _name)
 endfunction()
 
 list(APPEND ep
-    gmp
+    # gmp
     xz
     lzo
-    uchardet
+    # uchardet
     rubberband
     zlib
     bzip2
     libjpeg
-    lcms2
+    # lcms2
     lame
     ogg
     vorbis
-    opus
-    speex
-    libmodplug
-    libvpx
-    xvidcore
-    game-music-emu
+    # opus
+    # speex
+    # libmodplug
+    # libvpx
+    # xvidcore
+    # game-music-emu
     libpng
-    x264
-    x265
-    libdvdcss
-    libdvdread
-    libdvdnav
+    # x264
+    # x265
+    # libdvdcss
+    # libdvdread
+    # libdvdnav
     libiconv
     luajit
-    openal-soft
-    fribidi
+    # openal-soft
+    # fribidi
     expat
     nettle
-    libarchive
+    # libarchive
     freetype2
-    libbluray
+    # libbluray
     harfbuzz
     libsoxr
-    libzimg
-    libass
-    libressl
+    # libzimg
+    # libass
+    # libressl
     libxml2
-    libmfx
-    amf-headers
+    # libmfx
+    # amf-headers
     nvcodec-headers
-    libmysofa
+    # libmysofa
     aom
     dav1d
     ffmpeg
     angle-headers
-    mujs
+    # mujs
     spirv-headers
     spirv-tools
     spirv-cross
     glslang
-    vulkan
-    shaderc
-    crossc
+    # vulkan
+    # shaderc
+    # crossc
     libplacebo
     curl
-    vapoursynth
+    # vapoursynth
     mpv
     flac
-    opusfile
+    # opusfile
     libopusenc
-    opus-tools
+    # opus-tools
     termcap
     readline
     cryptopp

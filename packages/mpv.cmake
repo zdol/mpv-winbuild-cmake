@@ -15,7 +15,7 @@ ExternalProject_Add(mpv
         rubberband
         # uchardet
         # openal-soft
-        mujs
+        # mujs
         # vulkan
         # shaderc
         # crossc
@@ -29,13 +29,13 @@ ExternalProject_Add(mpv
         DEST_OS=win32
         <SOURCE_DIR>/waf configure
         --enable-static-build 
+        --enable-libmpv-shared
+        --enable-lua
+        --enable-rubberband
         --disable-debug-build
         --disable-pdf-build
         --disable-manpage-build
-        --enable-libmpv-shared
-        --enable-lua
-        --enable-javascript
-        --enable-rubberband
+        --disable-javascript
         --disable-libarchive
         --disable-libass
         --disable-libass-osd

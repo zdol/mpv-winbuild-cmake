@@ -38,7 +38,9 @@ ExternalProject_Add(ffmpeg
         --enable-runtime-cpudetect
         --enable-small
         --enable-gpl
-        --enable-version3
+        # --enable-version3
+        --enable-libmp3lame
+        --enable-libsoxr
         # --enable-nonfree
         --disable-avresample
         --disable-postproc
@@ -51,20 +53,18 @@ ExternalProject_Add(ffmpeg
         --disable-libfreetype
         --disable-libgme
         --disable-libmodplug
-        --enable-libmp3lame
         --disable-libopus
-        --enable-libsoxr
         --disable-libspeex
         --disable-libvorbis
         --disable-libvpx
         --disable-libx264
         --disable-libaom
-        --enable-libdav1d #no-macos
         --disable-libxvid
         --disable-libzimg
         --disable-libtls
         --disable-libxml2
         --disable-libmysofa
+        --enable-libdav1d #no-macos
         --enable-cuda #no-macos
         --enable-cuvid #no-macos
         --enable-nvdec #no-macos
