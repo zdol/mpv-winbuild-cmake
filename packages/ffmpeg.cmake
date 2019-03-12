@@ -4,7 +4,7 @@ ExternalProject_Add(ffmpeg
         nvcodec-headers
         bzip2
         # game-music-emu
-        gmp
+        # gmp
         lame
         # libressl
         # libass
@@ -43,12 +43,12 @@ ExternalProject_Add(ffmpeg
         --enable-avresample
         --enable-postproc
         --enable-avisynth
-        --enable-gmp
+        --disable-gmp
         --disable-doc
         --disable-libfribidi
         --disable-libass
         --disable-libbluray
-        --enable-libfreetype
+        --disable-libfreetype
         --disable-libgme
         --disable-libmodplug
         --enable-libmp3lame
@@ -70,6 +70,7 @@ ExternalProject_Add(ffmpeg
         --enable-nvdec #no-macos
         --enable-nvenc #no-macos
         --disable-libmfx
+        --disable-lzma
         --disable-amf
         --disable-decoder=libaom_av1 #no-macos
         --disable-w32threads
