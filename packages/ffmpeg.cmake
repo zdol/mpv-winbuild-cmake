@@ -58,7 +58,7 @@ ExternalProject_Add(ffmpeg
         --disable-libvorbis
         --disable-libvpx
         --disable-libx264
-        --enable-libaom
+        --disable-libaom
         --enable-libdav1d #no-macos
         --disable-libxvid
         --disable-libzimg
