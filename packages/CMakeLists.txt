@@ -125,11 +125,11 @@ list(APPEND ep
     zlib
     bzip2
     libjpeg
-    # lcms2
+    lcms2
     lame
     ogg
     vorbis
-    # opus
+    opus
     # speex
     # libmodplug
     # libvpx
@@ -154,7 +154,7 @@ list(APPEND ep
     libsoxr
     # libzimg
     # libass
-    # libressl
+    libressl
     libxml2
     # libmfx
     # amf-headers
@@ -169,8 +169,8 @@ list(APPEND ep
     spirv-tools
     spirv-cross
     glslang
-    # vulkan
-    # shaderc
+    vulkan
+    shaderc
     # crossc
     libplacebo
     curl
